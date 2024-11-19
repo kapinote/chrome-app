@@ -1,0 +1,32 @@
+{
+  "name": "Autocomplete",
+  "private": true,
+  "version": "0.0.3",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "@vueuse/core": "^11.1.0",
+    "autoprefixer": "^10.4.20",
+    "dotenv-flow": "^4.1.0",
+    "monaco-editor": "^0.51.0",
+    "pinia": "^2.2.2",
+    "postcss": "^8.4.45",
+    "preline": "^2.4.1",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "sass": "^1.78.0",
+    "tailwindcss": "^3.4.11",
+    "vue": "^3.5.4",
+    "vue-i18n": "^10.0.1",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "beta",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "vite": "^5.4.4"
+  }
+}

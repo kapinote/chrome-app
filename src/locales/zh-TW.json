@@ -1,0 +1,43 @@
+{
+  "title": "KapiNote",
+  "description": "KapiNote",
+  "nav": {
+    "home": "KapiNote",
+    "setup": "設定"
+  },
+  "setup": {
+    "roles": {
+      "whitelist": "已加入白名單，等待中",
+      "basic": "Basic",
+      "premium": "Premium"
+    },
+    "sign_out": "登出"
+  },
+  "login": {
+    "welcome": "歡迎回來",
+    "description": "透過 KapiNote 帳號登入",
+    "sign_in_with_kapi_note": "Sign in with KapiNote"
+  },
+  "contextMenus": {
+    "selection": "將所選文字轉到筆記",
+    "image": "將所選圖片轉到筆記",
+    "image_extract_text": "截取圖片內容",
+    "image_describe": "描述圖片內容"
+  },
+  "editor": {
+    "placeholder": {
+      "description": "體驗 KapiNote 的快捷鍵功能，快來試試吧！",
+      "shortcut1": "按下 Alt + Shift + E 開啟/關閉側邊欄",
+      "shortcut2": "按下 Alt + Shift + R 截取網頁內容"
+    }
+  },
+  "helpers": {
+    "edit": "編輯",
+    "update": "更新",
+    "copied": "已複製",
+    "successfully_updated": "更新成功"
+  },
+  "errors": {
+    "image": "截取內容失敗"
+  }
+}

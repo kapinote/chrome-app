@@ -1,0 +1,43 @@
+{
+  "title": "KapiNote",
+  "description": "KapiNote",
+  "nav": {
+    "home": "KapiNote",
+    "setup": "Setup"
+  },
+  "setup": {
+    "roles": {
+      "whitelist": "Waiting for approval",
+      "basic": "Basic",
+      "premium": "Premium"
+    },
+    "sign_out": "Sign out"
+  },
+  "login": {
+    "welcome": "Welcome back",
+    "description": "Sign in with your KapiNote account",
+    "sign_in_with_kapi_note": "Sign in with KapiNote"
+  },
+  "contextMenus": {
+    "selection": "Add selected text to note",
+    "image": "Add selected image to note",
+    "image_extract_text": "Extract text from image",
+    "image_describe": "Describe image content"
+  },
+  "editor": {
+    "placeholder": {
+      "description": "Experience the keyboard shortcuts of KapiNote, try it now!",
+      "shortcut1": "Press Alt + Shift + E to open/close the sidebar",
+      "shortcut2": "Press Alt + Shift + R to extract content from the webpage"
+    }
+  },
+  "helpers": {
+    "edit": "Edit",
+    "update": "Update",
+    "copied": "Copied",
+    "successfully_updated": "Successfully updated"
+  },
+  "errors": {
+    "image": "Failed to extract content"
+  }
+}

@@ -1,0 +1,47 @@
+name: Build and Publish to GCP (kapinote)
+
+on:
+  push:
+    tags:
+      - v*
+
+env:
+  VITE_KAPI_URL: ${{ secrets.VITE_KAPI_URL }}
+  VITE_KAPI_CONSOLE_URL: ${{ secrets.VITE_KAPI_CONSOLE_URL }}
+  VITE_KAPI_CLIENT_ID: ${{ secrets.VITE_KAPI_CLIENT_ID }}
+  ZIP_NAME: chrome-extension-${{ github.ref_name }}.zip
+
+jobs:
+  generate_release_files:
+    name: Generate Release File
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: latest
+
+    - name: Install Dependencies
+      run: bun install --frozen-lockfile
+
+    - name: Create production environment file
+      run: |
+        echo "VITE_KAPI_URL=${{ env.VITE_KAPI_URL }}" >> .env.production
+        echo "VITE_KAPI_CONSOLE_URL=${{ env.VITE_KAPI_CONSOLE_URL }}" >> .env.production
+        echo "VITE_KAPI_CLIENT_ID=${{ env.VITE_KAPI_CLIENT_ID }}" >> .env.production
+
+    - name: Build Chrome Extension App
+      run: bun run build
+
+    - name: Zip the folder
+      uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r ${{ env.ZIP_NAME }} dist
+
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: ${{ env.ZIP_NAME }}

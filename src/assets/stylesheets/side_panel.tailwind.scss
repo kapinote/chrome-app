@@ -1,0 +1,180 @@
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
+@layer components {
+  #home {
+    .editor-placeholder {
+      @apply hidden absolute whitespace-pre-wrap top-[-10px] left-4 text-sm text-neutral-500 font-mono pointer-events-none select-none;
+      line-height: 2.1rem;
+    }
+  }
+
+  #editor {
+    @apply h-[calc(100vh-120px)] w-full border rounded-md dark:border-neutral-700;
+
+    & .monaco-editor, & .overflow-guard {
+      @apply rounded-md;
+    }
+  }
+
+  #login {
+    @apply flex justify-center items-center min-h-[calc(100vh-3.75rem)];
+    @apply bg-center bg-no-repeat bg-cover bg-[url('../images/background.svg')] dark:bg-none;
+
+    & > .content {
+      @apply w-full mx-auto max-w-md -mt-[20rem];
+    }
+  }
+
+  #loading {
+    @apply flex justify-center items-center min-h-[calc(100vh-3.75rem)];
+    @apply bg-center bg-no-repeat bg-cover bg-[url('../images/background.svg')] dark:bg-none;
+
+    & > .content {
+      @apply space-y-2 -mt-[calc(20rem+1.2rem)];
+    }
+  }
+
+  .header {
+    @apply flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-3 dark:bg-neutral-800;
+
+    nav {
+      @apply w-full mx-auto px-4 flex items-center justify-between;
+
+      .logo {
+        @apply flex-none font-semibold text-xl text-black dark:text-white;
+      }
+
+      .link {
+        @apply font-medium text-gray-800 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200;
+        @apply dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-800;
+      }
+    }
+  }
+
+  // hight-light
+  .hl {
+    @apply relative inline-block before:absolute before:bottom-0 before:start-0 before:z-[1] before:w-full before:h-1 before:bg-gray-400;
+
+  }
+  .hl-lime {
+    @apply before:bg-lime-400;
+  }
+
+  .hl-indigo {
+    @apply before:bg-indigo-400;
+  }
+
+  // color
+  .text-main-color {
+    color: #7F00FF;
+  }
+
+  // button
+  .btn {
+    @apply bg-neutral-200 px-5 py-2.5 text-sm font-medium text-center rounded-lg focus:ring-4 hover:bg-neutral-300 cursor-pointer;
+    @apply dark:text-white dark:bg-neutral-800 dark:hover:bg-neutral-700;
+    appearance: button;
+
+    // disabled
+    &:disabled { @apply cursor-not-allowed; }
+  }
+  .btn-primary {
+    @apply text-white bg-violet-700 focus:ring-violet-200 dark:focus:ring-violet-900 hover:bg-violet-800;
+
+    // disabled
+    &:disabled { @apply bg-violet-300; }
+  }
+  .btn-danger {
+    @apply text-white bg-red-600 focus:ring-red-200 dark:focus:ring-red-400 hover:bg-red-700;
+
+    // disabled
+    &:disabled { @apply bg-red-400; }
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+  .btn-xs {
+    @apply px-2 py-1 text-xs;
+  }
+  .btn-google {
+    @apply flex items-center justify-center gap-2 w-full font-bold;
+    @apply btn;
+  }
+
+  .label {
+    @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+  }
+
+  .input[type="text"], .input[type="url"], .input[type="email"], textarea.input {
+    @apply bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5;
+    @apply dark:bg-neutral-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+
+    &[disabled] {
+      @apply cursor-not-allowed text-gray-500 bg-gray-200;
+      @apply dark:text-neutral-400 dark:bg-neutral-800;
+    }
+  }
+
+  .input-group {
+    @apply relative flex flex-wrap w-full items-stretch;
+
+    & > .input {
+      @apply flex-1 focus:z-10;
+    }
+
+    & .input-group-text {
+      @apply flex items-center justify-center px-3 bg-gray-100 border border-gray-300 rounded-lg dark:bg-gray-600 dark:border-gray-600 dark:text-white;
+    }
+
+    & > :not(:last-child) {
+      @apply rounded-r-none;
+    }
+
+    & > :not(:first-child) {
+      @apply rounded-l-none -ml-[1px];
+    }
+  }
+
+  // badge
+  .badge {
+    @apply text-xs font-medium px-2.5 py-1 rounded bg-gray-200 text-gray-800 dark:bg-neutral-700 dark:text-neutral-300
+  }
+  .badge-primary {
+    @apply bg-blue-200 text-blue-700 dark:bg-blue-700 dark:text-blue-200
+  }
+  .badge-danger {
+    @apply bg-red-200 text-red-700 dark:bg-red-700 dark:text-red-200
+  }
+  .badge-violet {
+    @apply bg-violet-200 text-violet-700 dark:bg-violet-800 dark:text-violet-200
+  }
+
+  // alert
+  .alert {
+    @apply px-2 py-2 text-sm text-gray-800 border border-gray-300 rounded-lg bg-gray-100;
+
+    &.alert-full {
+      @apply border-y border-x-0 rounded-none;
+    }
+    &.alert-primary {
+      @apply bg-violet-100 border-violet-200 text-violet-700 dark:bg-violet-950 dark:border-violet-600 dark:text-violet-200;
+    }
+    &.alert-danger {
+      @apply bg-red-100 border-red-300 text-red-500 dark:bg-red-950 dark:border-red-600 dark:text-red-200;
+    }
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md;
+    @apply dark:bg-neutral-950;
+    .card-body {
+      @apply p-4;
+    }
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+}
