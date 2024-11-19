@@ -1,6 +1,6 @@
 # KapiNote - AI note-taking tool
 
-## Demo
+KapiNote is an AI note-taking tool that combines AI technology to provide a variety of note-taking features, making your writing process more intelligent and efficient.
 
 [![Watch the Image](https://docs.kapinote.co/assets/getting-started.DLt_YuVM.webp)](https://docs.kapinote.co/assets/getting-started.DLt_YuVM.webp)
 
